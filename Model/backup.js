@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 
-const crowdDataSchema = new Schema ({
+const crowdBackupSchema = new Schema ({
     personin: {
         type: Number
     },
@@ -21,4 +21,4 @@ const crowdDataSchema = new Schema ({
 });
 
 
-module.exports = CrowdData = mongoose.model('crowdData', crowdDataSchema);
+module.exports = Backup = mongoose.model('crowdBackup', crowdBackupSchema);
