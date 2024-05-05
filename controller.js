@@ -27,3 +27,16 @@ exports.handlePostData = async (req, res) => {
       await setCrowdData.save().then(file => res.json(file));
     
 };
+
+exports.handleChartData = async (req, res) => {
+  try{
+    let data = await CrowdData.aggregate([{$match: {time: {
+    $gte: `2024-04-28 00:00:00`,
+      $lt: `2024-04-28 23:59:59`}
+        }},{$group: {_id: "", total_count: {$sum: "$personin"}, date: {$last:"$time"}}}]);
+     res.json(data);
+  }
+  catch(err){
+    console.log(err)
+  }
+}
