@@ -55,3 +55,7 @@ exports.handleBackup = async (req, res) => {
   // let data = await Backup.find({});
   // await CrowdData.insertMany(data).then(file => res.json(file));
 }
+
+exports.handlePieChartData = async (req, res) => {
+
+}
